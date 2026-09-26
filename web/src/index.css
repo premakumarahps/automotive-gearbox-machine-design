@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ease-google: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-luxury: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-antigravity: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #080d1a;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(2, 132, 199, 0.15), transparent 70%),
+      radial-gradient(circle at 10% 40%, rgba(245, 158, 11, 0.08), transparent 45%),
+      radial-gradient(circle at 90% 70%, rgba(56, 189, 248, 0.06), transparent 45%);
+    background-attachment: fixed;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Portfolio-Matched Luxury Hover Lift */
+.hover-lift {
+  transition: transform 0.4s var(--ease-luxury),
+              box-shadow 0.4s var(--ease-luxury),
+              border-color 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.3),
+              0 6px 16px -4px rgba(0, 0, 0, 0.4);
+}
+
+/* Antigravity Industrial Spectrum Card Shimmer */
+.spectrum-card {
+  position: relative;
+  transition: transform 0.4s var(--ease-luxury),
+              box-shadow 0.4s var(--ease-luxury),
+              border-color 0.3s ease;
+}
+
+.spectrum-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.7), rgba(245, 158, 11, 0.7), rgba(56, 189, 248, 0.7), rgba(2, 132, 199, 0.7));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.35;
+  transition: opacity 0.4s ease;
+}
+
+.spectrum-card:hover::before {
+  opacity: 1;
+  animation: spectrumBorder 4s linear infinite;
+}
+
+@keyframes spectrumBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animated Gear Spin */
+@keyframes gearSpinClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gearSpinCounter {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.gear-spin-cw {
+  animation: gearSpinClockwise 12s linear infinite;
+}
+
+.gear-spin-ccw {
+  animation: gearSpinCounter 12s linear infinite;
+}
+
+/* Custom Scrollbar for Flipbook and Tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}

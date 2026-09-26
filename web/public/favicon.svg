@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="gearGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="teethGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Gear Ring -->
+  <path d="M24 4L27 9H33L33 15L38 18L35 24L38 30L33 33V39H27L24 44L21 39H15V33L10 30L13 24L10 18L15 15V9H21L24 4Z" 
+        fill="url(#teethGrad)" stroke="#38bdf8" stroke-width="1.5" stroke-linejoin="round"/>
+        
+  <!-- Internal Pitch Circle -->
+  <circle cx="24" cy="24" r="12" fill="#080d1a" stroke="url(#gearGrad)" stroke-width="2"/>
+  
+  <!-- Center Bore & Keyway -->
+  <circle cx="24" cy="24" r="5" fill="#38bdf8"/>
+  <rect x="22.5" y="16.5" width="3" height="4" rx="0.5" fill="#f59e0b"/>
+  
+  <!-- Involute Tooth Dots -->
+  <circle cx="24" cy="8" r="1.5" fill="#f59e0b"/>
+  <circle cx="24" cy="40" r="1.5" fill="#f59e0b"/>
+  <circle cx="8" cy="24" r="1.5" fill="#38bdf8"/>
+  <circle cx="40" cy="24" r="1.5" fill="#38bdf8"/>
+</svg>
