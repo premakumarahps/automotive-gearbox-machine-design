@@ -9,8 +9,7 @@ import {
   ShieldCheck, 
   Sliders, 
   Layers,
-  Sparkles
-} from 'lucide-react';
+  Sparkles, ExternalLink } from 'lucide-react';
 
 interface FooterProps {
   onNavigateTab: (tabId: string) => void;
@@ -192,6 +191,28 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateTab }) => {
           <p>
             © {new Date().getFullYear()} ME3813 Machine Element Design. Industrial 5-Speed Manual Transmission designed and authored by Premakumara H.P.S. (210494D) and TechGear WKS (Group 11).
           </p>
+
+          <div className="flex items-center gap-4 text-xs">
+            <a
+              href="https://github.com/premakumarahps/automotive-gearbox-machine-design"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
+            >
+              <span>GitHub Repository</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href="https://premakumarahps.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
+            >
+              <span>Main Portfolio</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
 
           <button
             onClick={scrollToTop}
