@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { InteractiveGearboxSimulator } from './components/InteractiveGearboxSimulator';
@@ -341,6 +342,9 @@ export function App() {
 
       {/* Persistent Academic Footer */}
       <Footer onNavigateTab={handleTabChange} />
+      
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
